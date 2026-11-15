@@ -1,10 +1,32 @@
 \begin{thebibliography}{1}
 
-\bibitem{DBLP:journals/cacm/Knuth74}
-Donald~E. Knuth.
-\newblock {Computer Programming as an Art}.
-\newblock {\em Commun. {ACM}}, 17(12):667--673, 1974.
-\newblock \href {https://doi.org/10.1145/361604.361612}
-  {\path{doi:10.1145/361604.361612}}.
+\bibitem{Baader_Horrocks_Lutz_Sattler_2017}
+Franz Baader, Ian Horrocks, Carsten Lutz, and Uli Sattler.
+\newblock {\em An Introduction to Description Logic}.
+\newblock Cambridge University Press, 2017.
+
+\bibitem{DBLP:conf/ijcai/BaaderKM99}
+Franz Baader, Ralf K{\"{u}}sters, and Ralf Molitor.
+\newblock Computing least common subsumers in description logics with existential restrictions.
+\newblock In Thomas Dean, editor, {\em Proceedings of the Sixteenth International Joint Conference on Artificial Intelligence, {IJCAI} 99, Stockholm, Sweden, July 31 - August 6, 1999. 2 Volumes, 1450 pages}, pages 96--103. Morgan Kaufmann, 1999.
+\newblock URL: \url{http://ijcai.org/Proceedings/99-1/Papers/015.pdf}.
+
+\bibitem{DBLP:journals/japll/BaaderST07}
+Franz Baader, Baris Sertkaya, and Anni{-}Yasmin Turhan.
+\newblock Computing the least common subsumer w.r.t. a background terminology.
+\newblock {\em J. Appl. Log.}, 5(3):392--420, 2007.
+\newblock URL: \url{https://doi.org/10.1016/j.jal.2006.03.002}, \href {https://doi.org/10.1016/J.JAL.2006.03.002} {\path{doi:10.1016/J.JAL.2006.03.002}}.
+
+\bibitem{DBLP:conf/ecai/LutzPW10}
+Carsten Lutz, Robert Piro, and Frank Wolter.
+\newblock Enriching [escr ][lscr ]-concepts with greatest fixpoints.
+\newblock In Helder Coelho, Rudi Studer, and Michael~J. Wooldridge, editors, {\em {ECAI} 2010 - 19th European Conference on Artificial Intelligence, Lisbon, Portugal, August 16-20, 2010, Proceedings}, volume 215 of {\em Frontiers in Artificial Intelligence and Applications}, pages 41--46. {IOS} Press, 2010.
+\newblock URL: \url{http://www.booksonline.iospress.nl/Content/View.aspx?piid=17711}.
+
+\bibitem{DBLP:conf/esws/PenalozaT11}
+Rafael Pe{\~{n}}aloza and Anni{-}Yasmin Turhan.
+\newblock A practical approach for computing generalization inferences in \emph{EL}{\textbackslash}mathcal\{EL\}.
+\newblock In Grigoris Antoniou, Marko Grobelnik, Elena Simperl, Bijan Parsia, Dimitris Plexousakis, Pieter~De Leenheer, and Jeff~Z. Pan, editors, {\em The Semantic Web: Research and Applications - 8th Extended Semantic Web Conference, {ESWC} 2011, Heraklion, Crete, Greece, May 29-June 2, 2011, Proceedings, Part {I}}, volume 6643 of {\em Lecture Notes in Computer Science}, pages 410--423. Springer, 2011.
+\newblock \href {https://doi.org/10.1007/978-3-642-21034-1\_28} {\path{doi:10.1007/978-3-642-21034-1\_28}}.
 
 \end{thebibliography}
