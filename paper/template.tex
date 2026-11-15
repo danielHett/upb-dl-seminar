@@ -1,0 +1,120 @@
+
+\documentclass[a4paper,USenglish,cleveref,autoref,thm-restate]{lipics-v2021}
+
+\hideLIPIcs
+
+\bibliographystyle{plainurl}
+
+\title{Title} %TODO Please add
+
+%\titlerunning{Dummy short title} %TODO optional, use if title is longer than one line
+
+\author{Author 1}{Paderborn University, Germany}{email}{}{}%TODO add author 1 (alphabetically)
+
+\author{Author 2}{Paderborn University, Germany}{email}{}{}%TODO add author 2 (alphabetically)
+
+\authorrunning{Author 1 and Author 2} %TODO Add names.
+
+\ccsdesc[100]{\textcolor{red}{Replace ccsdesc macro with valid one}} %TODO: Please choose ACM 2012 classifications from https://dl.acm.org/ccs/ccs_flat.cfm 
+
+\keywords{Dummy keyword} %TODO add comma-separated list of keywords
+
+%\nolinenumbers %uncomment to disable line numbering
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \textcolor{red}{TODO: Add a short abstract of the document mentioning the paper you worked with and a very brief synopsis of its contents.}
+
+    \textcolor{red}{IMPORTANT: Do NOT just rewrite your paper sentence by sentence or paragraph by paragraph. You should use your own words and your own story. Add details and fill gaps where possible.}
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+\textcolor{red}{TODO: Motivate and describe the considered problem and the approach to its solution. Give some initial examples.}
+
+\subsection{Contributions}
+\textcolor{red}{TODO: State the contributions you are adding with this report. Do not repeat the contributions of the original authors.}
+
+\subsection{Related Work}
+\textcolor{red}{TODO: Describe the state of the art of the research on your paper's topic. You start by looking at the papers referenced in your paper and papers referencing your paper. You do not need to read those papers in detail.}
+
+\section{Preliminaries}
+\label{sec:prelims}
+  
+  \textcolor{red}{
+    TODO: If suitable, provide necessary basic definitions and results here. These should not be novel definitions or result from your chosen paper, but rather foundational definitions and results.
+    This section is not mandatory.
+  }
+
+\section{Main Part}
+
+    \textcolor{red}{TODO: Find a fitting title for this section and the subsections therein. This section should include a detailed description of the chosen paper's results and their analysis.}
+
+    We currently use the LIPIcs class for our seminar reports. Here is a brief introduction on how to use it. For further details, check out \url{https://submission.dagstuhl.de/series/details/LIPIcs#author}.
+
+    \begin{definition}
+        \label{def:definition}
+        Use definition enviornments to state definitions. Use a unique label for each definition.
+    \end{definition}
+
+    \begin{lemma}
+        \label{lem:lemmas}
+        Use lemma enviornments to state lemmas. Use a unique label for each lemma.
+    \end{lemma}
+
+    \begin{theorem}
+    \label{thm:theorems}
+        Use theorem enviornments to state theorems. Use a unique label for each theorem.
+    \end{theorem}
+
+    \begin{corollary}
+        \label{cor:corollaries}
+        Use corollary enviornments to state corollaries. Use a unique label for each corollary.
+    \end{corollary}
+
+    \begin{proof}
+        Use proof enviornments to sate proofs.
+    \end{proof}
+
+    You can reference these blocks later: \cref{lem:lemmas}, \cref{thm:theorems}.
+
+    There are different types of math enviornments. Use \(x+y\) or $x+y$ for inline equations,
+    \[
+        x+y
+    \]
+    for single line equations (without numbering) and 
+    \begin{equation}
+      x+y
+    \end{equation}
+    with numbering, and use  
+    \begin{align}
+        a &= x+y\\
+        b &= z
+    \end{align}
+    for aligned multiline quations.
+    If you do not need the numbering, use
+    \begin{align*}
+        a &= x+y\\
+        b &= z
+    \end{align*}
+    instead.
+
+    Use bibtex for your references. Add any references to the bibliography.bib. Use \cite{DBLP:journals/cacm/Knuth74} to cite a reference in your report. You can find bibtex entries for most papers on \url{dblp.uni-trier.de}. It suffices to use the condensed versions. If there are multiple versions, use the journal version preferably, then the conference version, then the preprint version.
+
+\section{Conclusion and Future Work}
+
+\textcolor{red}{TODO: Conclude the results you presented and present possibilities for future work.}
+
+%%
+%% Bibliography
+%%
+
+\bibliography{bibliography}
+
+\end{document}
