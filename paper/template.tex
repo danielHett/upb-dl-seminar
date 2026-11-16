@@ -5,11 +5,11 @@
 
 \bibliographystyle{plainurl}
 
-\title{Report on Computing LCS w.r.t General \(\mathcal{E}\mathcal{L}\)-TBoxes}
+\title{Report on Computing the LCS w.r.t General \(\mathcal{E}\mathcal{L}\)-TBoxes}
 
 \author{Daniel Hettinger}{Paderborn University, Germany}{dhetti2@campus.uni-paderborn.de}{}{}
 
-\authorrunning{Daniel Hettinger}
+\authorrunning{D. Hettinger}
 
 \begin{CCSXML}
 <ccs2012>
@@ -23,7 +23,7 @@
 
 \ccsdesc[500]{Computing methodologies~Description logics} %TODO Is this correct?
 
-\keywords{Least common subsumer, Decsription Logics, \EL{}} %TODO add comma-separated list of keywords
+\keywords{Least common subsumer, Decsription Logics, \EL{}}
 
 \nolinenumbers
 
@@ -43,15 +43,20 @@
 \newcommand{\bisimulates}[4]{(#1, #2) \backsimeq (#3, #4) }
 \newcommand{\len}[1]{\lvert #1 \rvert}
 \newcommand{\tail}[1]{\textsc{tail}(#1)}
+\newcommand{\kchar}[3]{X^{#1}(#2, #3)}
+
+\newcommand{\productmodel}{\canonical{C}{\TBox} \times \canonical{D}{\TBox}}
+\newcommand{\kcharproduct}{\kchar{k}{\productmodel}{(d_C, d_D)}}
+\newcommand{\extendedtree}{\hat{\mathcal{J}}^{k}_{(d_C, d_D)}}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-    % TODO write abstract. 
+    \begin{itemize}
+        \item An abstract about the report. 
+    \end{itemize}
 \end{abstract}
 
 \section{Introduction}
@@ -67,7 +72,7 @@
     \item \textbf{Motivation for the \textit{least common subsumer} (lcs)}. 
     \cite{DBLP:conf/ijcai/BaaderKM99} describes the ``bottom-up'' approach of building a 
     knowledge base (which uses lcs). Can use this as a motivation for this paper. 
-    \item \textbf{What are the lcs and msc?} Provide a high-level definition of the lcs. 
+    \item \textbf{What is the lcs?} Provide a high-level definition of the lcs. 
     \item \textbf{Introduce an example.} I'll use the two TBoxes \(\mathcal{T}_1\) and 
     \(\mathcal{T}_2\) from the original paper. To show that the lcs doesn't have to exist, 
     can highlight that there is no lcs of Penicillin and Carbapenem for for \(\mathcal{T}_1\) 
@@ -86,6 +91,7 @@
             which introduces an extenstion of \EL{} in which the lcs always exists and 
             \cite{DBLP:journals/japll/BaaderST07} and \cite{DBLP:conf/esws/PenalozaT11}, 
             which devise algorithms for \textit{approximating} the lcs up to some \textit{k}. 
+            \item \textcolor{red}{Find papers that reference \cite{DBLP:conf/ijcai/ZarriessT13}.}
             % TODO find other papers that references this paper for the Related Work section. 
         \end{itemize}
 
@@ -135,10 +141,10 @@
 \subsection{Simulation Relations}
     
     \begin{itemize}
-        \item Define what a simulation between two interpratations is 
+        \item Define what a simulation between two interpretations is 
         using definition 5 from the paper. 
         \item Define $\simulates{\I}{d}{\J}{e}$ and $\bisimulates{\I}{d}{\J}{e}$. 
-        \item Give an example of simulation. Define two interpratations $\I$ and $\J$ 
+        \item Give an example of simulation. Define two interpretations $\I$ and $\J$ 
         s.t. $\J$ simulates $\I$ but not the other way around. Explicitly define the simulation
         $\mathcal{S}$ for $\simulates{\I}{d}{\J}{e}$. Show where $\simulates{\J}{e}{\I}{d}$
         doesn't hold. 
@@ -155,67 +161,80 @@
         \item Given an element $\sigma$ in an unravelling $\I_d$, define the length $\len{\sigma}$ and $\tail{\sigma}$. 
         \item Define a finite subtree of an unravelling $\I_d^l$. 
         \item Using $\TBox_2$, give an example of $(\canonical{P}{\TBox_2})_{d_p}$. 
-        \item Define the $l$-characteristic concept using defintion 9. Show how $(\canonical{P}{\TBox_2})_{d_p}$ can be used
-        to compute the $2$-characteristic concept $X^l(\canonical{P}{\TBox_2}, d_p)$. 
+        \item Define the $l$-characteristic concept using Definition 9. The original paper claims the 
+        finite subtree of an unravelling, $\I_d^l$, can be used to derive $l$-characteristic concept, 
+        but doesn't do this explicitly. As an example, it will be shown how $(\canonical{P}{\TBox_2})_{d_p}$ 
+        can be used to compute the $2$-characteristic concept $X^2(\canonical{P}{\TBox_2}, d_p)$. 
     \end{itemize}
-\section{Main Part}
 
-    \textcolor{red}{TODO: Find a fitting title for this section and the subsections therein. This section should include a detailed description of the chosen paper's results and their analysis.}
+\subsection{Product Interpretation}
+    
+    \begin{itemize}
+        \item Define the product of two interpretations found in the report. \textcolor{red}{Do I need to cite the full report for this? Or is it enough to cite the article?}
+        \item Using the four canonical models $\canonical{P}{\TBox_1}$, $\canonical{C}{\TBox_1}$, $\canonical{P}{\TBox_2}$, and 
+        $\canonical{C}{\TBox_2}$, define two product models $\canonical{P}{\TBox_1} \times \canonical{C}{\TBox_1}$ and $\canonical{P}{\TBox_2} \times \canonical{C}{\TBox_2}$ which will be used in later examples. 
+    \end{itemize}
 
-    We currently use the LIPIcs class for our seminar reports. Here is a brief introduction on how to use it. For further details, check out \url{https://submission.dagstuhl.de/series/details/LIPIcs#author}.
+\section{Computing the LCS}
+  
+\subsection{Characterization of the LCS}
 
-    \begin{definition}
-        \label{def:definition}
-        Use definition enviornments to state definitions. Use a unique label for each definition.
-    \end{definition}
+    \begin{itemize}
+        \item Characterizing the lcs involves defining a set of possible candidates that we know how to derive. Can use Lemma 10
+        from the original paper in this report to show that the k-characteristic concept of the product model 
+        $\canonical{C}{\TBox} \times \canonical{D}{\TBox}$ always gives us a concept belonging to the set $\textsc{cs}_{\TBox}(C, D)$, and furthermore,
+        that this concept is the k-$\lcs{C}{D}$. 
+        \item As an example, can use the previously computed product models $\canonical{P}{\TBox_1} \times \canonical{C}{\TBox_1}$ 
+        and $\canonical{P}{\TBox_2} \times \canonical{C}{\TBox_2}$ to derive lcs candidates. 
+        \item Can introduce Corollary 11 as a sort of ``naive'' approach to computing the lcs. It is 
+        sound and complete, but can't be a decision procedure because it may never terminate. Nonetheless 
+        a way of applying the results from Lemma 10. 
+        \item \textbf{Testing whether a concept is the $\lcs{C}{D}$.} Can introduce Lemma 12, characterizes the lcs 
+        as a concept $E$, whose canonical model $\canonical{\TBox}{E}$ simulates $\canonical{C}{\TBox} \times \canonical{D}{\TBox}$.
+        This gives us a way to test a concept. 
+        \item Can introduce Corollary 14. Somewhat similar to Corollary 11, in that is describes an algorithm for finding the lcs. 
+        But instead of trying to find some $k$ s.t. for all $l$ the $k$-characteristic concept is subsumed by the $l$-characteristic 
+        concept, Corollary 14 frames finding the lcs as finding some $k$ s.t. the canonical model of the $k$-characteristic concept
+        simulates the product model $\canonical{C}{\TBox} \times \canonical{D}{\TBox}$. It's important to stress that this still isn't 
+        a decision procedure for computing the lcs (if the lcs doesn't exist this will never terminate). But, can explain that deciding
+        a bound for $k$ (i.e. if $\lcs{C}{}D$ exists, then $k$ must be bounded by $x$) can allow us to turn this corollary into a decision
+        procedure. 
+    \end{itemize}
 
-    \begin{lemma}
-        \label{lem:lemmas}
-        Use lemma enviornments to state lemmas. Use a unique label for each lemma.
-    \end{lemma}
+\subsection{Bounding the Depth of the LCS}
 
-    \begin{theorem}
-    \label{thm:theorems}
-        Use theorem enviornments to state theorems. Use a unique label for each theorem.
-    \end{theorem}
+    \begin{itemize}
+        \item In order to find a bound on $k$, the original paper builds a representation of $\kcharproduct$. 
+        This is the \textit{extended} tree unravelling of $\kcharproduct$ at $(d_C, d_D)$, $\extendedtree$. 
+        Missing in the original paper is a more concrete example of how this interpretation is built. Will add this in the report. 
+        \item Lemma 15 describes important properties of $\extendedtree$, namely, that it itself is a model of $\TBox$ and is 
+        simulation equivalent to $\kcharproduct$.
+        \item \textbf{Sufficient conditions.} Before getting to a bound for $k$ (and thereby a decision procedure), the paper talks about sufficient conditions 
+        for deciding if the lcs exists. Corollary 16 gives sufficient conditions for the existence of the lcs. Would be good to show 
+        why this is \textit{not} a necessary condition for the lcs (via an example). The paper claims that Lemma 15 allows us to determine 
+        the lack of an lcs (if product model only has asynchronous cycles). Can more explicitly explain in the paper why this is
+        the case. 
+        \item \textbf{Bound on $k$.} Lemma 17 is what gives us a concrete bound of the size of $k$. Go over the proof from the paper. 
 
-    \begin{corollary}
-        \label{cor:corollaries}
-        Use corollary enviornments to state corollaries. Use a unique label for each corollary.
-    \end{corollary}
+        
+        
+    \end{itemize}
+\subsection{Decision Procedure for Computing the LCS}
+    \begin{itemize}
+        \item Define the decision procedure using Theorem 18 (and its corresponding proof) from the original paper.
+        \item \textbf{My contribution.} Provide a full example of computing the $\lcs{P}{C}$, where $\TBox = \TBox_2$. 
+    \end{itemize}
 
-    \begin{proof}
-        Use proof enviornments to sate proofs.
-    \end{proof}
-
-    You can reference these blocks later: \cref{lem:lemmas}, \cref{thm:theorems}.
-
-    There are different types of math enviornments. Use \(x+y\) or $x+y$ for inline equations,
-    \[
-        x+y
-    \]
-    for single line equations (without numbering) and 
-    \begin{equation}
-      x+y
-    \end{equation}
-    with numbering, and use  
-    \begin{align}
-        a &= x+y\\
-        b &= z
-    \end{align}
-    for aligned multiline quations.
-    If you do not need the numbering, use
-    \begin{align*}
-        a &= x+y\\
-        b &= z
-    \end{align*}
-    instead.
-
-    Use bibtex for your references. Add any references to the bibliography.bib. Use \cite{DBLP:journals/cacm/Knuth74} to cite a reference in your report. You can find bibtex entries for most papers on \url{dblp.uni-trier.de}. It suffices to use the condensed versions. If there are multiple versions, use the journal version preferably, then the conference version, then the preprint version.
 
 \section{Conclusion and Future Work}
 
-\textcolor{red}{TODO: Conclude the results you presented and present possibilities for future work.}
+    \begin{itemize}
+        \item Restate results from my report. 
+        \item \textbf{Idea for future work.} While trying to determine what my own contribution would be, 
+        I was not able to find an implementation of the decision procedure described. Closest is an implementation for 
+        computing the approximation of the lcs called \textsc{gel} \cite{gel}, based on \cite{DBLP:conf/esws/PenalozaT11}. Future 
+        work might involve a concrete implementation.  
+    \end{itemize}
 
 %%
 %% Bibliography

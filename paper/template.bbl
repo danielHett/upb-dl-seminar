@@ -17,6 +17,11 @@ Franz Baader, Baris Sertkaya, and Anni{-}Yasmin Turhan.
 \newblock {\em J. Appl. Log.}, 5(3):392--420, 2007.
 \newblock URL: \url{https://doi.org/10.1016/j.jal.2006.03.002}, \href {https://doi.org/10.1016/J.JAL.2006.03.002} {\path{doi:10.1016/J.JAL.2006.03.002}}.
 
+\bibitem{gel}
+Andreas Ecke and Julian Mendez.
+\newblock Gel (generalizations for the el family).
+\newblock URL: \url{https://github.com/julianmendez/gel}.
+
 \bibitem{DBLP:conf/ecai/LutzPW10}
 Carsten Lutz, Robert Piro, and Frank Wolter.
 \newblock Enriching [escr ][lscr ]-concepts with greatest fixpoints.
@@ -28,5 +33,11 @@ Rafael Pe{\~{n}}aloza and Anni{-}Yasmin Turhan.
 \newblock A practical approach for computing generalization inferences in \emph{EL}{\textbackslash}mathcal\{EL\}.
 \newblock In Grigoris Antoniou, Marko Grobelnik, Elena Simperl, Bijan Parsia, Dimitris Plexousakis, Pieter~De Leenheer, and Jeff~Z. Pan, editors, {\em The Semantic Web: Research and Applications - 8th Extended Semantic Web Conference, {ESWC} 2011, Heraklion, Crete, Greece, May 29-June 2, 2011, Proceedings, Part {I}}, volume 6643 of {\em Lecture Notes in Computer Science}, pages 410--423. Springer, 2011.
 \newblock \href {https://doi.org/10.1007/978-3-642-21034-1\_28} {\path{doi:10.1007/978-3-642-21034-1\_28}}.
+
+\bibitem{DBLP:conf/ijcai/ZarriessT13}
+Benjamin Zarrie{\ss} and Anni{-}Yasmin Turhan.
+\newblock Most specific generalizations w.r.t. general el-tboxes.
+\newblock In Francesca Rossi, editor, {\em {IJCAI} 2013, Proceedings of the 23rd International Joint Conference on Artificial Intelligence, Beijing, China, August 3-9, 2013}, pages 1191--1197. {IJCAI/AAAI}, 2013.
+\newblock URL: \url{http://www.aaai.org/ocs/index.php/IJCAI/IJCAI13/paper/view/6709}.
 
 \end{thebibliography}
