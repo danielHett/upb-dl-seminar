@@ -28,6 +28,12 @@ Carsten Lutz, Robert Piro, and Frank Wolter.
 \newblock In Helder Coelho, Rudi Studer, and Michael~J. Wooldridge, editors, {\em {ECAI} 2010 - 19th European Conference on Artificial Intelligence, Lisbon, Portugal, August 16-20, 2010, Proceedings}, volume 215 of {\em Frontiers in Artificial Intelligence and Applications}, pages 41--46. {IOS} Press, 2010.
 \newblock URL: \url{http://www.booksonline.iospress.nl/Content/View.aspx?piid=17711}.
 
+\bibitem{technology2013most}
+Theoretical Computer Science Dresden~University of~Technology, Benjamin Zarrieß, Anni-Yasmin Turhan, and Theoretical Computer Science Dresden~University of~Technology.
+\newblock Most specific generalizations w.r.t. general el-tboxes.
+\newblock 2013.
+\newblock \href {https://doi.org/10.25368/2022.196} {\path{doi:10.25368/2022.196}}.
+
 \bibitem{DBLP:conf/esws/PenalozaT11}
 Rafael Pe{\~{n}}aloza and Anni{-}Yasmin Turhan.
 \newblock A practical approach for computing generalization inferences in \emph{EL}{\textbackslash}mathcal\{EL\}.

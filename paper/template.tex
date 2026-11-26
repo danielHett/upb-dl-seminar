@@ -21,6 +21,7 @@
 </ccs2012>
 \end{CCSXML}
 
+
 \ccsdesc[500]{Computing methodologies~Description logics} %TODO Is this correct?
 
 \keywords{Least common subsumer, Decsription Logics, \EL{}}
@@ -73,7 +74,7 @@
     \cite{DBLP:conf/ijcai/BaaderKM99} describes the ``bottom-up'' approach of building a 
     knowledge base (which uses lcs). Can use this as a motivation for this paper. 
     \item \textbf{What is the lcs?} Provide a high-level definition of the lcs. 
-    \item \textbf{Introduce an example.} I'll use the two TBoxes \(\mathcal{T}_1\) and 
+    \item \textbf{Introduce a running example.} I'll use the two TBoxes \(\mathcal{T}_1\) and 
     \(\mathcal{T}_2\) from the original paper. To show that the lcs doesn't have to exist, 
     can highlight that there is no lcs of Penicillin and Carbapenem for for \(\mathcal{T}_1\) 
     (and show why there can't be) and mention what the lcs would be for \(\mathcal{T}_2\).
@@ -102,23 +103,15 @@
 \subsection{Description Logics and \EL{}}
 
     \begin{itemize}
-        \item Define \EL{}. 
-        \item Define what an interpretation ($\interpretation$) is. What are the domain 
-        ($\interdomain$) and interpretation function ($\interfunc{\cdot}$)? How does $\interfunc{\cdot}$ 
-        extend to complex \EL{} concepts?
-        \item What is a GCI? What does it mean for an interpretation $\interpretation$ to satisfy a GCI? 
-        \item What is a TBox, and what does it mean for an interpretation $\interpretation$ to be a 
-        model of a TBox $\TBox$?
-        \item A small example of an interpretation that models $\TBox_1$. 
+        \item \textit{Briefly} describe what an interpretation is and introduce the notation ($\interpretation$, $\interdomain$, the extension of a concept $C$ in $\interpretation$ is $\interfunc{C}$).
+        \item Define \EL{}.  
+        \item \textit{Briefly} describe GCIs. Introduce the notation ($C \sqsubseteq D$). An interpretation that satisfies all GCIs?
     \end{itemize}
 
-\subsection{Subsumption and Least Common Subsumer}
+\subsection{Least Common Subsumer}
     
     \begin{itemize}
-        \item What is a reasoning task?
-        \item What is subsumption? In other words, given some concepts 
-        $C$ and $D$ and a TBox $\TBox$, what is $\subsumes{C}{D}$? Give a small example of
-        subsumption. 
+        \item \textit{Briefly} describe subsumption and introduce notation ($\TBox \models C \sqsubseteq D$). 
         \item How is $\lcs{C}{D}$ formally defined? Use definition 1 from the paper. 
         \item What is a common subsumer? Important to clarify that there is a set 
         of common subsumers, but only one unique lcs. Can use $\TBox_2$ to
@@ -135,7 +128,7 @@
         given some TBox $\TBox$ and concept $C$, how to get the canonical model 
         $\canonical{C}{\TBox}$. Can demonstrate this by building canonical models 
         $\canonical{P}{\TBox_1}$, $\canonical{C}{\TBox_1}$, $\canonical{P}{\TBox_2}$, and 
-        $\canonical{C}{\TBox_2}$, which will also be used in later examples. 
+        $\canonical{C}{\TBox_2}$, \textbf{which will also be used in later examples}. 
     \end{itemize}
 
 \subsection{Simulation Relations}
@@ -144,14 +137,14 @@
         \item Define what a simulation between two interpretations is 
         using definition 5 from the paper. 
         \item Define $\simulates{\I}{d}{\J}{e}$ and $\bisimulates{\I}{d}{\J}{e}$. 
-        \item Give an example of simulation. Define two interpretations $\I$ and $\J$ 
+        \item Give an example of simulation. Define two (very small) interpretations $\I$ and $\J$ 
         s.t. $\J$ simulates $\I$ but not the other way around. Explicitly define the simulation
         $\mathcal{S}$ for $\simulates{\I}{d}{\J}{e}$. Show where $\simulates{\J}{e}{\I}{d}$
         doesn't hold. 
-        \item With canonical models and simulations covered, can introduce lemma 6 from the paper.
+        \item With canonical models and simulations covered, \textbf{we can introduce lemma 6 from the paper}.
         These are some properties of canonical models and gives us another way to characterize 
-        subsumption. If there is space, might make sense to add outlines for the proofs of these properties. 
-        Should also elaborate on what the properties mean. 
+        subsumption. \textcolor{purple}{If there is space, add outlines for the proofs of these properties. 
+        Should also elaborate on what the properties mean.} 
     \end{itemize}
 
 \subsection{Tree Unravelling}
@@ -160,19 +153,18 @@
         \item Define an unravelling $\I_d$ given some interpretation $\I$ and $d \in \interdomain$ using definition 8. 
         \item Given an element $\sigma$ in an unravelling $\I_d$, define the length $\len{\sigma}$ and $\tail{\sigma}$. 
         \item Define a finite subtree of an unravelling $\I_d^l$. 
-        \item Using $\TBox_2$, give an example of $(\canonical{P}{\TBox_2})_{d_p}$. 
-        \item Define the $l$-characteristic concept using Definition 9. The original paper claims the 
+        \item \textbf{Define the $l$-characteristic concept using Definition 9.} The original paper claims the 
         finite subtree of an unravelling, $\I_d^l$, can be used to derive $l$-characteristic concept, 
-        but doesn't do this explicitly. As an example, it will be shown how $(\canonical{P}{\TBox_2})_{d_p}$ 
-        can be used to compute the $2$-characteristic concept $X^2(\canonical{P}{\TBox_2}, d_p)$. 
+        but doesn't do this explicitly. \textcolor{purple}{If there is space, I can shown how $(\canonical{P}{\TBox_2})_{d_p}$ 
+        can be used to compute the $2$-characteristic concept $X^2(\canonical{P}{\TBox_2}, d_p)$}.
     \end{itemize}
 
 \subsection{Product Interpretation}
     
     \begin{itemize}
-        \item Define the product of two interpretations found in the report. \textcolor{red}{Do I need to cite the full report for this? Or is it enough to cite the article?}
+        \item Define the product of two interpretations found in the report \cite{technology2013most}.
         \item Using the four canonical models $\canonical{P}{\TBox_1}$, $\canonical{C}{\TBox_1}$, $\canonical{P}{\TBox_2}$, and 
-        $\canonical{C}{\TBox_2}$, define two product models $\canonical{P}{\TBox_1} \times \canonical{C}{\TBox_1}$ and $\canonical{P}{\TBox_2} \times \canonical{C}{\TBox_2}$ which will be used in later examples. 
+        $\canonical{C}{\TBox_2}$, define two product models $\canonical{P}{\TBox_1} \times \canonical{C}{\TBox_1}$ and $\canonical{P}{\TBox_2} \times \canonical{C}{\TBox_2}$ \textbf{which will be used in later examples.} 
     \end{itemize}
 
 \section{Computing the LCS}
@@ -204,20 +196,18 @@
 \subsection{Bounding the Depth of the LCS}
 
     \begin{itemize}
-        \item In order to find a bound on $k$, the original paper builds a representation of $\kcharproduct$. 
+        \item In order to turn Corollary 14 into a decision procedure, we need to bound $k$. 
+        \item To find a bound on $k$, the original paper builds a representation of $\kcharproduct$. 
         This is the \textit{extended} tree unravelling of $\kcharproduct$ at $(d_C, d_D)$, $\extendedtree$. 
         Missing in the original paper is a more concrete example of how this interpretation is built. Will add this in the report. 
         \item Lemma 15 describes important properties of $\extendedtree$, namely, that it itself is a model of $\TBox$ and is 
         simulation equivalent to $\kcharproduct$.
-        \item \textbf{Sufficient conditions.} Before getting to a bound for $k$ (and thereby a decision procedure), the paper talks about sufficient conditions 
-        for deciding if the lcs exists. Corollary 16 gives sufficient conditions for the existence of the lcs. Would be good to show 
+        \item \textcolor{purple}{\textbf{Sufficient conditions.} Before getting to a bound for $k$ (and thereby a decision procedure), the paper talks about sufficient conditions 
+        for deciding if the lcs exists. \textbf{This doesn't directly have anything to do with the bound $k$, so I will only include this if there is space.}
+        Corollary 16 gives sufficient conditions for the existence of the lcs. Would be good to show 
         why this is \textit{not} a necessary condition for the lcs (via an example). The paper claims that Lemma 15 allows us to determine 
-        the lack of an lcs (if product model only has asynchronous cycles). Can more explicitly explain in the paper why this is
-        the case. 
+        the lack of an lcs (if product model only has asynchronous cycles). Could give a more explicit explaination as to why this is the case.}
         \item \textbf{Bound on $k$.} Lemma 17 is what gives us a concrete bound of the size of $k$. Go over the proof from the paper. 
-
-        
-        
     \end{itemize}
 \subsection{Decision Procedure for Computing the LCS}
     \begin{itemize}
